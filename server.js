@@ -37,7 +37,7 @@ function saveNotes(notes) {
 }
 
 // GET endpoint to retrieve all notes
-app.get('api/notes', (req, res) => {
+app.get('/api/notes', (req, res) => {
   const notes = readNotes();
   res.json(notes);
 });
