@@ -73,3 +73,19 @@ app.put('/api/notes/:id', (req, res) => {
   saveNotes(notes);
   res.json(notes[noteId]);
 });
+
+// DELETE endpoint to delete a note
+app.delete('/api/notes/:id', (req, res) => {
+  const notes = readNotes();
+
+  const newNotes = notes.filter(note => note.id !== req.params.id);
+
+  saveNotes(newNotes);
+
+  res.json({ message: 'Note deleted' });
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
