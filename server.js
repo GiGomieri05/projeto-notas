@@ -41,3 +41,19 @@ app.get('api/notes', (req, res) => {
   const notes = readNotes();
   res.json(notes);
 });
+
+// POST endpoint to add a new note
+app.post('/api/notes', (req, res) => {
+  const notes = readNotes();
+
+  const newNote = {
+    id: Date.now().toString(),
+    title: req.body.title,
+    content: req.body.content,
+  };
+
+  notes.push(newNote);
+  saveNotes(notes);
+
+  res.json(newNote);
+});
