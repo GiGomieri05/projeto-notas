@@ -57,3 +57,19 @@ app.post('/api/notes', (req, res) => {
 
   res.json(newNote);
 });
+
+// PUT endpoint to update a note
+app.put('/api/notes/:id', (req, res) => {
+  const notes = readNotes();
+
+  const noteId = notes.findIndex(note => note.id === req.params.id);
+  if (noteId < 0) {
+    return res.status(404).json({ error: 'Note not found' });
+  }
+
+  notes[noteId].title = req.body.title;
+  notes[noteId].content = req.body.content;
+
+  saveNotes(notes);
+  res.json(notes[noteId]);
+});
