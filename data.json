@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Passear com o cachorro",
+        "content": "Levar o cachorro para passear no parque às 18h.",
+        "created_at": "2026-04-01T15:30:00Z"
+    },
+    {
+        "id": 2,
+        "title": "Comprar mantimentos",
+        "content": "Comprar leite, pão e ovos no supermercado.",
+        "created_at": "2026-04-02T10:00:00Z"
+    },
+    {
+        "id": 3,
+        "title": "Estudar para a prova",
+        "content": "Revisar os capítulos 4 e 5 do livro de matemática.",
+        "created_at": "2026-04-03T09:00:00Z"
+    }
+]
